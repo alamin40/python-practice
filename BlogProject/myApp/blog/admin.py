@@ -15,6 +15,7 @@ class PostAdmin(admin.ModelAdmin):
   list_display = ('image_tag', 'title', 'url', 'cat' )
   search_fields = ('title',)
   list_filter = ('cat',)
+  list_per_page = 50
 
 
 

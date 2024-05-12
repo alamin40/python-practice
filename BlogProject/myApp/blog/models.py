@@ -18,6 +18,11 @@ class Category(models.Model):
   def image_tag(self):
     return format_html('<img src = "/media/{}" style="width:40px; height:40px;border-radius:40px"  />'.format(self.image))
   
+  def __str__(self):
+    return self.title
+
+
+  
   
   
      
@@ -34,3 +39,6 @@ class Post(models.Model):
   
   def image_tag(self):
     return format_html('<img src="/media/{}" style="width:40px; height:40px; border-radius:40px" />'.format(self.image))
+  
+  def __str__(self):
+    return self.title
