@@ -1,7 +1,7 @@
 from unicodedata import category
 from django.db import models
 from django.utils.html import format_html
-from tinymce.models import HTMLField
+
 
 
 # Create your models here.
@@ -34,7 +34,7 @@ class Category(models.Model):
 class Post(models.Model):
   post_id = models.AutoField(primary_key=True)
   title = models.CharField(max_length=200)
-  content = HTMLField()
+  content = models.TextField()
   url = models.CharField(max_length=100)
   cat = models.ForeignKey(Category, on_delete=models.CASCADE)
   image = models.ImageField(upload_to='post/')

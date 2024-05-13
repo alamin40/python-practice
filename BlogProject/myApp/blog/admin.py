@@ -16,6 +16,9 @@ class PostAdmin(admin.ModelAdmin):
   search_fields = ('title',)
   list_filter = ('cat',)
   list_per_page = 50
+  
+  class Media:
+    js = ('https://cdn.tiny.cloud/1/no-api-key/tinymce/7/tinymce.min.js', 'js/script.js')
 
 
 
