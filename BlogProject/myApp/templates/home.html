@@ -1,3 +1,39 @@
-{% extends "base.html" %} 
-{%block titile%} My Blog{%endblock%}
-{%block content%} This is content for home page {%endblock%}
+{%extends 'base.html' %}
+
+{%block title%} StoryScape {%endblock%}
+
+{%block content%}
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col s12 ">
+
+
+      {%for p in posts %}
+
+      <div class="row">
+
+        <div class="col s12 m8">
+
+
+          {{p.content |truncatewords:60 | safe}}
+
+        </div>
+
+      </div>
+
+
+      {%endfor %}
+
+
+    </div>
+
+
+  </div>
+
+</div>
+
+
+{%endblock%}
